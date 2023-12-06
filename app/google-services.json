@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "647538417960",
+    "firebase_url": "https://rrbmu-studies-default-rtdb.firebaseio.com",
+    "project_id": "rrbmu-studies",
+    "storage_bucket": "rrbmu-studies.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:647538417960:android:860209faf0aa6c4dabf01d",
+        "android_client_info": {
+          "package_name": "com.studies.rrbmustudies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "647538417960-rtjj9ei8osrs10gjinj766anb0q62940.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.studies.rrbmustudies",
+            "certificate_hash": "4713a054c95a6e5020f076d617cda86c420321c2"
+          }
+        },
+        {
+          "client_id": "647538417960-1atjuegl4l60n3uhblleju3i47ln3mbk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzelPSnzMJELYYmplnI5jSBT97q3-6sh0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "647538417960-1atjuegl4l60n3uhblleju3i47ln3mbk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/bookparentitemviewlayout"
+    android:padding="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="235dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_margin="2dp"
+        android:layout_marginBottom="1dp">
+
+        <TextView
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:id="@+id/subjectName"
+            android:padding="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Maths"/>
+
+        <ImageView
+            android:textStyle="bold"
+            android:id="@+id/horizontalScroll"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/scroll_icon"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:orientation="horizontal"
+        android:id="@+id/booksParentRV"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+</LinearLayout>

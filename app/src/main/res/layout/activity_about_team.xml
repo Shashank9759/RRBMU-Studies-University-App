@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OthersFeatures.AboutTeamActivity">
+
+    <View
+        android:id="@+id/customBgTop"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/custom_screen_bg_shape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="24dp"
+        app:cardBackgroundColor="@color/light_grey"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/about_team_txt"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/teamMemberPhoto1"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="24dp"
+                android:contentDescription="@string/team_member_profile_photo"
+                android:src="@drawable/person_img"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/teamMemberName1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/team_member_name_1"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/teamMemberPhoto1"
+                app:layout_constraintStart_toStartOf="@+id/teamMemberPhoto1"
+                app:layout_constraintTop_toBottomOf="@+id/teamMemberPhoto1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/teamMemberPhoto1"
+                app:layout_constraintStart_toStartOf="@+id/teamMemberPhoto1"
+                app:layout_constraintTop_toBottomOf="@+id/teamMemberName1">
+
+                <ImageView
+                    android:id="@+id/social_instagram"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_instagram"
+                    android:contentDescription="@string/social_instagram_txt"/>
+
+                <ImageView
+                    android:id="@+id/social_facebook"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_facebook"
+                    android:contentDescription="@string/social_facebook_txt"
+                    android:layout_marginStart="16dp"/>
+
+                <ImageView
+                    android:id="@+id/social_twitter"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_twitter"
+                    android:contentDescription="@string/social_twitter_txt"
+                    android:layout_marginStart="16dp"/>
+
+                <ImageView
+                    android:id="@+id/social_whatsapp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_whatsapp"
+                    android:contentDescription="@string/social_whatsapp_txt"
+                    android:layout_marginStart="16dp"/>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

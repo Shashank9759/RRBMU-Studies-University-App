@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OthersFeatures.LoginActivity">
+
+    <ImageView
+        android:id="@+id/loginBg"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:contentDescription="@string/login_bg_txt"
+        android:scaleType="fitXY"
+        android:src="@drawable/sample_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/loginScreenTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:text="@string/login_screen_txt"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/loginBg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/emailAddressEdt"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
+        android:autofillHints="true"
+        android:background="@drawable/auth_edt_bg"
+        android:hint="@string/email_address_edt_txt"
+        android:imeOptions="actionNext"
+        android:inputType="textEmailAddress"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColorHint="@color/grey"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/loginScreenTxt"
+        app:layout_constraintStart_toStartOf="@+id/loginScreenTxt"
+        app:layout_constraintTop_toBottomOf="@+id/loginBg" />
+
+    <EditText
+        android:id="@+id/passwordEdt"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:autofillHints="true"
+        android:background="@drawable/auth_edt_bg"
+        android:hint="@string/password_edt_txt"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColorHint="@color/grey"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/emailAddressEdt"
+        app:layout_constraintStart_toStartOf="@+id/emailAddressEdt"
+        app:layout_constraintTop_toBottomOf="@+id/emailAddressEdt" />
+
+    <Button
+        android:id="@+id/emailLoginBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/primaryBlue"
+        android:text="@string/log_in_btn_txt"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/passwordEdt"
+        app:layout_constraintStart_toStartOf="@+id/passwordEdt"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEdt" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/or_txt"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/emailLoginBtn"
+        app:layout_constraintStart_toStartOf="@+id/emailLoginBtn"
+        app:layout_constraintTop_toBottomOf="@+id/emailLoginBtn" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/googleSignInBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/accentColor"
+        android:text="@string/sign_in_with_google"
+        android:textColor="@color/grey"
+        android:textSize="14sp"
+        app:icon="@drawable/google_icon"
+        app:iconTintMode="multiply"
+        app:layout_constraintEnd_toEndOf="@+id/emailLoginBtn"
+        app:layout_constraintStart_toStartOf="@+id/emailLoginBtn"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/signUpBtnTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/signup_title_txt"
+        android:textColor="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/signUpBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/sign_up_txt"
+        android:textColor="@color/deepBlue"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/signUpBtnTxt"
+        app:layout_constraintStart_toEndOf="@+id/signUpBtnTxt"
+        app:layout_constraintTop_toTopOf="@+id/signUpBtnTxt" />
+
+    <ProgressBar
+        android:id="@+id/loadingProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/purple"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.777" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

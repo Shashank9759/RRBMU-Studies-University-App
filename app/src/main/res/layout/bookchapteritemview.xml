@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:id="@+id/bookchapterparent"
+    android:padding="3dp"
+    android:layout_width="match_parent"
+    android:layout_height="80dp">
+
+    <Button
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:id="@+id/bookchapterName"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="3dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="17dp"
+        android:text="Chapter 1"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:backgroundTint="@color/blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/Widget.Material3.Button.Icon"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

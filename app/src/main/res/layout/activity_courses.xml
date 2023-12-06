@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".UI.Activities.CoursesActivity">
+
+    <View
+        android:background="@drawable/custom_bg"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"/>
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adViewCourses"
+            android:layout_width="330dp"
+            android:layout_height="178dp"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            app:adSize="BANNER"
+            app:adUnitId="ca-app-pub-3940256099942544/6300978111"/>
+
+        <TextView
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:text="UG Courses"/>
+
+        <Button
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:id="@+id/coursesUGFirstyr"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="5dp"
+            android:text="1st Year"
+            android:backgroundTint="@color/blue"
+            style="@style/Widget.Material3.Button.Icon"/>
+
+        <Button
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:id="@+id/coursesUGSecondyr"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="5dp"
+            android:text="2nd Year"
+            android:backgroundTint="@color/blue"
+            style="@style/Widget.Material3.Button.Icon"/>
+
+        <Button
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:id="@+id/coursesUGThirdyr"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="15dp"
+            android:text="3rd Year"
+            android:backgroundTint="@color/blue"
+            style="@style/Widget.Material3.Button.Icon"/>
+
+        <TextView
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:text="PG Courses"/>
+
+        <Button
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:id="@+id/coursesPGPrevyr"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="5dp"
+            android:text="Previous Year"
+            android:backgroundTint="@color/blue"
+            style="@style/Widget.Material3.Button.Icon"/>
+
+        <Button
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:id="@+id/coursesPGFinalyr"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="5dp"
+            android:text="Final Year"
+            android:backgroundTint="@color/blue"
+            style="@style/Widget.Material3.Button.Icon"/>
+    </LinearLayout>
+</RelativeLayout>
