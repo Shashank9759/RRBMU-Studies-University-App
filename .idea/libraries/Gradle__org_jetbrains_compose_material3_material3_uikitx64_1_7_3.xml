@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jetbrains.compose.material3:material3-uikitx64:1.7.3" type="kotlin.native" external-system-id="GRADLE">
+    <properties groupId="org.jetbrains.compose.material3" artifactId="material3-uikitx64" version="1.7.3" baseVersion="1.7.3" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.material3/material3-uikitx64/1.7.3/4657dc19e120125d4b5bfb4c93d4074c5ec07a1b/material3.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.material3/material3-uikitx64/1.7.3/e32954ae68e8c257bda37241a79df765eac78180/material3-uikitx64-1.7.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

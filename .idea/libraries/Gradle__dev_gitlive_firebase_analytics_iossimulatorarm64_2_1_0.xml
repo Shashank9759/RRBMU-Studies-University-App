@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: dev.gitlive:firebase-analytics-iossimulatorarm64:2.1.0" type="kotlin.native" external-system-id="GRADLE">
+    <properties groupId="dev.gitlive" artifactId="firebase-analytics-iossimulatorarm64" version="2.1.0" baseVersion="2.1.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.gitlive/firebase-analytics-iossimulatorarm64/2.1.0/f0308d8e92aec766d2da4cbc1bea78671220bd3d/firebase-analytics.klib!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.gitlive/firebase-analytics-iossimulatorarm64/2.1.0/806dcd2d27b8123b5baff72d264d906d2bc4783d/firebase-analytics-cinterop-FirebaseAnalytics.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.gitlive/firebase-analytics-iossimulatorarm64/2.1.0/d3ca5e73f2eb4ffe157416b870225a45c412285e/firebase-analytics-iossimulatorarm64-2.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

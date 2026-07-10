@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: io.coil-kt.coil3:coil-network-ktor3-iosarm64:3.0.4" type="kotlin.native" external-system-id="GRADLE">
+    <properties groupId="io.coil-kt.coil3" artifactId="coil-network-ktor3-iosarm64" version="3.0.4" baseVersion="3.0.4" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.coil-kt.coil3/coil-network-ktor3-iosarm64/3.0.4/5493e1a2e2577ec9d331742fa581afcd88e63c61/coil-network-ktor3.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.coil-kt.coil3/coil-network-ktor3-iosarm64/3.0.4/5e8859218b8cc20b5d63a340850eb9b30785c4ee/coil-network-ktor3-iosarm64-3.0.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

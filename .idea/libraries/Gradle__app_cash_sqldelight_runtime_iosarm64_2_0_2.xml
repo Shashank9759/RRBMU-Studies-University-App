@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: app.cash.sqldelight:runtime-iosarm64:2.0.2" type="kotlin.native" external-system-id="GRADLE">
+    <properties groupId="app.cash.sqldelight" artifactId="runtime-iosarm64" version="2.0.2" baseVersion="2.0.2" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/app.cash.sqldelight/runtime-iosarm64/2.0.2/8bf3d4d3c9745c596bbfcb635d8b10dd57bbb8e9/runtime.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/app.cash.sqldelight/runtime-iosarm64/2.0.2/211780efa034fabf78a4d0e63811c5bc3635146/runtime-iosarm64-2.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

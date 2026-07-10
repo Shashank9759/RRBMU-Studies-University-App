@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: io.insert-koin:koin-compose-viewmodel-iosx64:4.0.0" type="kotlin.native" external-system-id="GRADLE">
+    <properties groupId="io.insert-koin" artifactId="koin-compose-viewmodel-iosx64" version="4.0.0" baseVersion="4.0.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.insert-koin/koin-compose-viewmodel-iosx64/4.0.0/e8be24f6d9fdde837b2e43e067e90da86315b449/koin-compose-viewmodel.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.insert-koin/koin-compose-viewmodel-iosx64/4.0.0/15d32d2d4777aa938fe47c5668895572cd7c7b8a/koin-compose-viewmodel-iosx64-4.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

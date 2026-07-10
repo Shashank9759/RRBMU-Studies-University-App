@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: dev.gitlive:firebase-common:commonMain:2.1.0" type="kotlin.common" external-system-id="GRADLE">
+    <properties groupId="dev.gitlive" artifactId="firebase-common" version="2.1.0" baseVersion="2.1.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.kotlin/metadata/kotlinTransformedMetadataLibraries/dev.gitlive-firebase-common-2.1.0-commonMain-7Aqy4Q.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.gitlive/firebase-common/2.1.0/544ea942ebafb77497669c6a6637f84e897672b7/firebase-common-2.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

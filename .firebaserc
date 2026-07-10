@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "prod": "rbmu-studies-prod"
+  },
+  "targets": {},
+  "etags": {}
+}

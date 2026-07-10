@@ -1,0 +1,33 @@
+-- Cached papers for offline browsing of recently viewed papers
+CREATE TABLE CachedPaper (
+    id TEXT NOT NULL PRIMARY KEY,
+    courseId TEXT NOT NULL,
+    systemId TEXT NOT NULL,
+    partId TEXT NOT NULL,
+    title TEXT NOT NULL,
+    subject TEXT NOT NULL,
+    paperCode TEXT NOT NULL,
+    year INTEGER NOT NULL,
+    pdfUrl TEXT NOT NULL,
+    coverImageUrl TEXT,
+    cachedAt INTEGER NOT NULL
+);
+
+CREATE INDEX cached_paper_viewed ON CachedPaper(cachedAt DESC);
+
+insertOrReplace:
+INSERT OR REPLACE INTO CachedPaper(
+    id, courseId, systemId, partId, title, subject, paperCode, year, pdfUrl, coverImageUrl, cachedAt
+) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+selectAllOrdered:
+SELECT * FROM CachedPaper ORDER BY cachedAt DESC LIMIT :limit;
+
+selectById:
+SELECT * FROM CachedPaper WHERE id = :id;
+
+deleteOlderThan:
+DELETE FROM CachedPaper WHERE cachedAt < :threshold;
+
+count:
+SELECT COUNT(*) FROM CachedPaper;

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jetbrains.androidx.core:core-bundle-iosx64:1.0.1" type="kotlin.native" external-system-id="GRADLE">
+    <properties groupId="org.jetbrains.androidx.core" artifactId="core-bundle-iosx64" version="1.0.1" baseVersion="1.0.1" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.androidx.core/core-bundle-iosx64/1.0.1/5293f1bf4358d46bba6da5d1a97e0cb0ab431ce1/core-bundle.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.androidx.core/core-bundle-iosx64/1.0.1/542533093a3bdfd1b2534cc5991d7ef42f5b6775/core-bundle-iosx64-1.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

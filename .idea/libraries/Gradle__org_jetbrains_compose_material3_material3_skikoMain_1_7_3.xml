@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jetbrains.compose.material3:material3:skikoMain:1.7.3" type="kotlin.common" external-system-id="GRADLE">
+    <properties groupId="org.jetbrains.compose.material3" artifactId="material3" version="1.7.3" baseVersion="1.7.3" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.kotlin/metadata/kotlinTransformedMetadataLibraries/org.jetbrains.compose.material3-material3-1.7.3-skikoMain-qpUt6Q.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.compose.material3/material3/1.7.3/235e99ee0faf374bd261cd80286e0c88993a43b4/material3-1.7.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

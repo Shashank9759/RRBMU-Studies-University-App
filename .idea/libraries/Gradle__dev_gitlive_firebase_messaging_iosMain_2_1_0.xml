@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: dev.gitlive:firebase-messaging:iosMain:2.1.0" type="kotlin.native" external-system-id="GRADLE">
+    <properties groupId="dev.gitlive" artifactId="firebase-messaging" version="2.1.0" baseVersion="2.1.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.kotlin/metadata/kotlinTransformedMetadataLibraries/dev.gitlive-firebase-messaging-2.1.0-iosMain-SPb_Qw.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.gitlive/firebase-messaging/2.1.0/debd8be72650143371982a553e35958ab51fdbdd/firebase-messaging-2.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

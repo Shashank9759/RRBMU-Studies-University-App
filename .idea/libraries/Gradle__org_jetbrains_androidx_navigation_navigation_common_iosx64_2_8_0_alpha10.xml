@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jetbrains.androidx.navigation:navigation-common-iosx64:2.8.0-alpha10" type="kotlin.native" external-system-id="GRADLE">
+    <properties groupId="org.jetbrains.androidx.navigation" artifactId="navigation-common-iosx64" version="2.8.0-alpha10" baseVersion="2.8.0-alpha10" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.androidx.navigation/navigation-common-iosx64/2.8.0-alpha10/5669bb18daf68df61252ea7098efc6a0868e6de/navigation-common.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.androidx.navigation/navigation-common-iosx64/2.8.0-alpha10/d576b50236ade5845bd590706022fb44dc2fd821/navigation-common-iosx64-2.8.0-alpha10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

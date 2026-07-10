@@ -1,0 +1,16 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest16432150592030004328.xml:2:13-83
+INJECTED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest16432150592030004328.xml:2:13-83
+	package
+		INJECTED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest16432150592030004328.xml
+	xmlns:android
+		ADDED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest16432150592030004328.xml:2:23-81
+uses-sdk
+INJECTED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest16432150592030004328.xml reason: use-sdk injection requested
+INJECTED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest16432150592030004328.xml
+INJECTED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest16432150592030004328.xml
+	android:targetSdkVersion
+		INJECTED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest16432150592030004328.xml
+	android:minSdkVersion
+		INJECTED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest16432150592030004328.xml

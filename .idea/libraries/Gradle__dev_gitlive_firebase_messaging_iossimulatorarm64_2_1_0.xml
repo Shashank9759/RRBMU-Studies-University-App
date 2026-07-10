@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: dev.gitlive:firebase-messaging-iossimulatorarm64:2.1.0" type="kotlin.native" external-system-id="GRADLE">
+    <properties groupId="dev.gitlive" artifactId="firebase-messaging-iossimulatorarm64" version="2.1.0" baseVersion="2.1.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.gitlive/firebase-messaging-iossimulatorarm64/2.1.0/49132ae38298b078bd2f29727fac88ec376eb742/firebase-messaging.klib!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.gitlive/firebase-messaging-iossimulatorarm64/2.1.0/7c03b3efdff1f3dabaf67467b2020ed6eb9a346/firebase-messaging-cinterop-FirebaseMessaging.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.gitlive/firebase-messaging-iossimulatorarm64/2.1.0/4f2e15d429157b8e388bd5c7de2a1d44acd64155/firebase-messaging-iossimulatorarm64-2.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

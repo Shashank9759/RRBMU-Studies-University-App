@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: app.cash.sqldelight:runtime-jvm:2.0.2" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="app.cash.sqldelight" artifactId="runtime-jvm" version="2.0.2" baseVersion="2.0.2" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/app.cash.sqldelight/runtime-jvm/2.0.2/187de9631fe1fb647b0d5c0b6805c9ae92ed04c4/runtime-jvm-2.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/app.cash.sqldelight/runtime-jvm/2.0.2/be4bdcb35673b6639b7fb52c4be5c4e388deeb1b/runtime-jvm-2.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/app.cash.sqldelight/runtime-jvm/2.0.2/8f392e9b4537c76d490daa60568d74094965a283/runtime-jvm-2.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

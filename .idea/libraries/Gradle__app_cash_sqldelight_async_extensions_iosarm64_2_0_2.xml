@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: app.cash.sqldelight:async-extensions-iosarm64:2.0.2" type="kotlin.native" external-system-id="GRADLE">
+    <properties groupId="app.cash.sqldelight" artifactId="async-extensions-iosarm64" version="2.0.2" baseVersion="2.0.2" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/app.cash.sqldelight/async-extensions-iosarm64/2.0.2/92b7aef4d1ba3e3b25eea6e4daec0ec1368eb375/async-extensions.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/app.cash.sqldelight/async-extensions-iosarm64/2.0.2/bd5ae891fc296670d34497ec533cdd8e6a0c724a/sqldelight-async-extensions-iosarm64-2.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

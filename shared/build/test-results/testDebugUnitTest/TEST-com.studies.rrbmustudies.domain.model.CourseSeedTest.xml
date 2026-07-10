@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.studies.rrbmustudies.domain.model.CourseSeedTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-07-07T19:06:36" hostname="Shashanks-MacBook-Pro.local" time="0.007">
+  <properties/>
+  <testcase name="seed_semesterHasSixParts_perCourse" classname="com.studies.rrbmustudies.domain.model.CourseSeedTest" time="0.006"/>
+  <testcase name="seed_yearlyHasThreeParts_perCourse" classname="com.studies.rrbmustudies.domain.model.CourseSeedTest" time="0.0"/>
+  <testcase name="seed_eachCourseHasThreeSystems" classname="com.studies.rrbmustudies.domain.model.CourseSeedTest" time="0.0"/>
+  <testcase name="seed_containsAll31Courses" classname="com.studies.rrbmustudies.domain.model.CourseSeedTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

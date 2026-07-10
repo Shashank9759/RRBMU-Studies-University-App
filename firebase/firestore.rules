@@ -1,0 +1,48 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAdmin() {
+      return request.auth != null &&
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    match /courses/{document=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Collection-group queries (Recently Added, global Search) hit papers across all
+    // courses. Those queries are NOT authorized by the /courses/** rule above and need a
+    // dedicated collection-group rule, otherwise the server rejects them (PERMISSION_DENIED),
+    // which shows as results flashing in from cache then disappearing.
+    match /{path=**}/papers/{paperId} {
+      allow read: if true;
+    }
+
+    match /home_ads/{id} {
+      allow read: if resource.data.isActive == true || isAdmin();
+      allow write: if isAdmin();
+    }
+
+    match /app_settings/{id} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /notifications/{id} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /feedback/{id} {
+      allow create: if true;
+      allow read, update, delete: if isAdmin();
+    }
+
+    match /admins/{uid} {
+      allow read: if request.auth.uid == uid;
+      allow write: if false;
+    }
+  }
+}

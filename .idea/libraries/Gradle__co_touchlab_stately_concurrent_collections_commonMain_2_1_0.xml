@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: co.touchlab:stately-concurrent-collections:commonMain:2.1.0" type="kotlin.common" external-system-id="GRADLE">
+    <properties groupId="co.touchlab" artifactId="stately-concurrent-collections" version="2.1.0" baseVersion="2.1.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.kotlin/metadata/kotlinTransformedMetadataLibraries/co.touchlab-stately-concurrent-collections-2.1.0-commonMain-jSCQOA.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/co.touchlab/stately-concurrent-collections/2.1.0/285133d1b75d377c82036f1c773a7a2a32da5118/stately-concurrent-collections-2.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

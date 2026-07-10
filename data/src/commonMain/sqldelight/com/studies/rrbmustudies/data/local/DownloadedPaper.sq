@@ -1,0 +1,41 @@
+-- Offline PDF vault metadata (app-private files only)
+CREATE TABLE DownloadedPaper (
+    id TEXT NOT NULL PRIMARY KEY,
+    courseId TEXT NOT NULL,
+    systemId TEXT NOT NULL,
+    partId TEXT NOT NULL,
+    title TEXT NOT NULL,
+    subject TEXT NOT NULL,
+    paperCode TEXT NOT NULL,
+    year INTEGER NOT NULL,
+    remotePdfUrl TEXT NOT NULL,
+    localPath TEXT NOT NULL,
+    fileSizeBytes INTEGER NOT NULL,
+    downloadedAt INTEGER NOT NULL
+);
+
+CREATE INDEX downloaded_paper_date ON DownloadedPaper(downloadedAt DESC);
+
+insertOrReplace:
+INSERT OR REPLACE INTO DownloadedPaper(
+    id, courseId, systemId, partId, title, subject, paperCode, year,
+    remotePdfUrl, localPath, fileSizeBytes, downloadedAt
+) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+selectAllOrdered:
+SELECT * FROM DownloadedPaper ORDER BY downloadedAt DESC;
+
+selectById:
+SELECT * FROM DownloadedPaper WHERE id = :id;
+
+deleteById:
+DELETE FROM DownloadedPaper WHERE id = :id;
+
+deleteAll:
+DELETE FROM DownloadedPaper;
+
+count:
+SELECT COUNT(*) FROM DownloadedPaper;
+
+totalBytes:
+SELECT COALESCE(SUM(fileSizeBytes), 0) FROM DownloadedPaper;

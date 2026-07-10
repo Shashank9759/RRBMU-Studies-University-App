@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: app.cash.sqldelight:coroutines-extensions-jvm:2.0.2" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="app.cash.sqldelight" artifactId="coroutines-extensions-jvm" version="2.0.2" baseVersion="2.0.2" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/app.cash.sqldelight/coroutines-extensions-jvm/2.0.2/6530d64b1a1321ba1cc2ca554100413994755749/sqldelight-coroutines-extensions-jvm-2.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/app.cash.sqldelight/coroutines-extensions-jvm/2.0.2/6679de9aafe6d73914c4bcfd85a2ebcb206ab5d5/coroutines-extensions-jvm-2.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/app.cash.sqldelight/coroutines-extensions-jvm/2.0.2/13a08503ea244c0e710f2cd4a397a380096607de/sqldelight-coroutines-extensions-jvm-2.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

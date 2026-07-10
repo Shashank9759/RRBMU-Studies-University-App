@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.studies.rrbmustudies.data.mapper.MappersTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-07-07T19:24:12" hostname="Shashanks-MacBook-Pro.local" time="0.047">
+  <properties/>
+  <testcase name="paperDto_roundTripsThroughDomain" classname="com.studies.rrbmustudies.data.mapper.MappersTest" time="0.02"/>
+  <testcase name="courseDto_mapsToDomain_withCorrectLevel" classname="com.studies.rrbmustudies.data.mapper.MappersTest" time="0.025"/>
+  <testcase name="systemType_mapsCorrectly" classname="com.studies.rrbmustudies.data.mapper.MappersTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

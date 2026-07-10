@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: dev.gitlive:firebase-analytics:commonMain:2.1.0" type="kotlin.common" external-system-id="GRADLE">
+    <properties groupId="dev.gitlive" artifactId="firebase-analytics" version="2.1.0" baseVersion="2.1.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.kotlin/metadata/kotlinTransformedMetadataLibraries/dev.gitlive-firebase-analytics-2.1.0-commonMain-D6-9eg.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.gitlive/firebase-analytics/2.1.0/93091f74f381f6f52b17f026887f9be638135724/firebase-analytics-2.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

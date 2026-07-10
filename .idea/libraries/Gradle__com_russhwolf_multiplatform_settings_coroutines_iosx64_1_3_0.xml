@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.russhwolf:multiplatform-settings-coroutines-iosx64:1.3.0" type="kotlin.native" external-system-id="GRADLE">
+    <properties groupId="com.russhwolf" artifactId="multiplatform-settings-coroutines-iosx64" version="1.3.0" baseVersion="1.3.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.russhwolf/multiplatform-settings-coroutines-iosx64/1.3.0/8caec1e4a4acaee2401496830ed1b24ee650269/multiplatform-settings-coroutines-iosX64Main-1.3.0.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.russhwolf/multiplatform-settings-coroutines-iosx64/1.3.0/175486e5fd7a0e92d685f4a723c2c492cd81d38e/multiplatform-settings-coroutines-iosx64-1.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

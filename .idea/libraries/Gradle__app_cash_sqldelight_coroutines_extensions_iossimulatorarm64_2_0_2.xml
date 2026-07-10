@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: app.cash.sqldelight:coroutines-extensions-iossimulatorarm64:2.0.2" type="kotlin.native" external-system-id="GRADLE">
+    <properties groupId="app.cash.sqldelight" artifactId="coroutines-extensions-iossimulatorarm64" version="2.0.2" baseVersion="2.0.2" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/app.cash.sqldelight/coroutines-extensions-iossimulatorarm64/2.0.2/c02d187b3fbce2797b2365d270061f5e0e15e3d9/coroutines-extensions.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/app.cash.sqldelight/coroutines-extensions-iossimulatorarm64/2.0.2/13a08503ea244c0e710f2cd4a397a380096607de/sqldelight-coroutines-extensions-iossimulatorarm64-2.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

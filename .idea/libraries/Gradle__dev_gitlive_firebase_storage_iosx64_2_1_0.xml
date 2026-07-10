@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: dev.gitlive:firebase-storage-iosx64:2.1.0" type="kotlin.native" external-system-id="GRADLE">
+    <properties groupId="dev.gitlive" artifactId="firebase-storage-iosx64" version="2.1.0" baseVersion="2.1.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.gitlive/firebase-storage-iosx64/2.1.0/c19de1d0e84d22efda2c3a2c485a8e908290f650/firebase-storage.klib!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.gitlive/firebase-storage-iosx64/2.1.0/bb7aeef7e1fc2f55cd8438122537842336c6f0dd/firebase-storage-cinterop-FirebaseStorage.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.gitlive/firebase-storage-iosx64/2.1.0/37d0814e1f880be36c09462fe2811c6ac2092482/firebase-storage-iosx64-2.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
