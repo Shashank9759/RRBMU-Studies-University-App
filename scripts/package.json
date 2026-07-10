@@ -1,0 +1,15 @@
+{
+  "name": "rrbmu-studies-scripts",
+  "private": true,
+  "description": "Firestore seed scripts for RRBMU Studies",
+  "scripts": {
+    "seed": "node seed-courses.js",
+    "firebase:login": "cd .. && firebase login",
+    "firebase:use": "cd .. && firebase use --add",
+    "firebase:deploy": "cd .. && firebase deploy --only firestore:rules,firestore:indexes,storage"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.0.0",
+    "firebase-tools": "^15.22.4"
+  }
+}
