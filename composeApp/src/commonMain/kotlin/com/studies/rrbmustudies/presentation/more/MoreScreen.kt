@@ -14,7 +14,9 @@ import androidx.compose.material.icons.filled.Groups
 import androidx.compose.material.icons.filled.Link
 import androidx.compose.material.icons.filled.School
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.Share
 import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.StarRate
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -22,12 +24,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
+import com.studies.rrbmustudies.platform.openUrl
+import com.studies.rrbmustudies.platform.shareText
 import com.studies.rrbmustudies.ui.components.AdBannerSlot
 import com.studies.rrbmustudies.ui.components.GuestUserCard
+import com.studies.rrbmustudies.ui.components.MoreBrandedHeader
 import com.studies.rrbmustudies.ui.components.MoreMenuRow
 import com.studies.rrbmustudies.ui.components.MoreSectionHeader
 import com.studies.rrbmustudies.ui.theme.RrbmuDimens
 import com.studies.rrbmustudies.ui.theme.UsefulLinks
+
+private const val PLAY_STORE_URL =
+    "https://play.google.com/store/apps/details?id=com.studies.rrbmustudies"
 
 @Composable
 fun MoreScreen(
@@ -49,12 +57,16 @@ fun MoreScreen(
         ),
         verticalArrangement = Arrangement.spacedBy(RrbmuDimens.spacingLg),
     ) {
-        item {
-            GuestUserCard(
-                isAdmin = isAdmin,
-                onLoginClick = onLoginClick,
-                onManageContent = onAdminDashboard,
-            )
+        item { MoreBrandedHeader() }
+
+        if (isAdmin) {
+            item {
+                GuestUserCard(
+                    isAdmin = true,
+                    onLoginClick = onLoginClick,
+                    onManageContent = onAdminDashboard,
+                )
+            }
         }
 
         item {
@@ -114,6 +126,25 @@ fun MoreScreen(
                     title = "Settings",
                     icon = Icons.Default.Settings,
                     onClick = onNavigateToSettings,
+                )
+                HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.25f))
+                MoreMenuRow(
+                    title = "Share App",
+                    subtitle = "Tell your classmates",
+                    icon = Icons.Default.Share,
+                    onClick = {
+                        shareText(
+                            text = "Get RRBMU previous-year question papers on RRBMU Studies: $PLAY_STORE_URL",
+                            title = "Share RRBMU Studies",
+                        )
+                    },
+                )
+                HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.25f))
+                MoreMenuRow(
+                    title = "Rate Us",
+                    subtitle = "Rate us on the Play Store",
+                    icon = Icons.Default.StarRate,
+                    onClick = { openUrl(PLAY_STORE_URL) },
                 )
             }
         }

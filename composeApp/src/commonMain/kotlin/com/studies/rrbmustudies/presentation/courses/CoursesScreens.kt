@@ -12,13 +12,16 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.ExpandMore
+import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.pullrefresh.PullRefreshIndicator
 import androidx.compose.material.pullrefresh.pullRefresh
 import androidx.compose.material.pullrefresh.rememberPullRefreshState
@@ -38,17 +41,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import coil3.compose.AsyncImage
 import com.studies.rrbmustudies.domain.model.Course
 import com.studies.rrbmustudies.domain.model.CourseLevel
 import com.studies.rrbmustudies.domain.model.SystemType
+import com.studies.rrbmustudies.ads.NativeAdCard
 import com.studies.rrbmustudies.ui.components.AdBannerSlot
 import com.studies.rrbmustudies.ui.components.AdminFab
 import com.studies.rrbmustudies.ui.components.CourseListRow
+import com.studies.rrbmustudies.ui.components.CrestWatermark
 import com.studies.rrbmustudies.ui.components.EmptyState
 import com.studies.rrbmustudies.ui.components.ErrorState
 import com.studies.rrbmustudies.ui.components.FilterChip
@@ -62,7 +66,10 @@ import com.studies.rrbmustudies.ui.components.RrbmuTopBar
 import com.studies.rrbmustudies.ui.components.SearchBar
 import com.studies.rrbmustudies.ui.components.StitchBreadcrumb
 import com.studies.rrbmustudies.ui.state.UiState
-import com.studies.rrbmustudies.ui.theme.StitchSecondaryContainer
+import com.studies.rrbmustudies.ui.theme.Saffron
+import com.studies.rrbmustudies.ui.theme.SaffronBrush
+import com.studies.rrbmustudies.ui.theme.courseHeroBrush
+import com.studies.rrbmustudies.ui.theme.courseJewel
 import com.studies.rrbmustudies.ui.theme.levelCategoryLabel
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -206,6 +213,7 @@ fun CourseDetailScreen(
                     LazyColumn {
                         item {
                             CourseHeroHeader(
+                                courseShortName = courseShortName,
                                 title = buildCourseHeroTitle(courseShortName, data.courseName),
                                 paperCount = totalPapers,
                                 backgroundImageUrl = data.backgroundImageUrl,
@@ -235,7 +243,7 @@ fun CourseDetailScreen(
                                     partName = part.name,
                                     description = part.description.orEmpty(),
                                     paperCount = part.paperCount,
-                                    paperCountLabel = "Previous Year Questions",
+                                    paperCountLabel = "Papers & Study Notes",
                                     highlighted = false,
                                     partNumber = index + 1,
                                     onExplore = {
@@ -321,8 +329,9 @@ fun PartPapersScreen(
                                 ) {
                                     Text(
                                         text = "Available Papers",
-                                        style = MaterialTheme.typography.displayLarge,
+                                        style = MaterialTheme.typography.headlineMedium,
                                         fontWeight = FontWeight.Bold,
+                                        color = MaterialTheme.colorScheme.primary,
                                     )
                                     Box {
                                         Row(
@@ -398,12 +407,15 @@ fun PartPapersScreen(
                                 )
                             }
                         } else {
-                            items(data.papers) { paper ->
+                            itemsIndexed(data.papers) { index, paper ->
                                 PaperCard(
                                     paper = paper,
                                     onClick = { onPaperClick(paper.id) },
                                     modifier = Modifier.padding(horizontal = 16.dp, vertical = 6.dp),
                                 )
+                                if (index == 3) {
+                                    NativeAdCard()
+                                }
                             }
                         }
                     }
@@ -420,93 +432,108 @@ fun PartPapersScreen(
 
 @Composable
 private fun CourseHeroHeader(
+    courseShortName: String,
     title: String,
     paperCount: Int,
-    backgroundImageUrl: String? = null,
     onBack: () -> Unit,
+    backgroundImageUrl: String? = null,
 ) {
+    val jewel = courseJewel(courseShortName)
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .height(200.dp),
+            .height(240.dp)
+            .background(courseHeroBrush(jewel)),
     ) {
         if (!backgroundImageUrl.isNullOrBlank()) {
-            AsyncImage(
+            coil3.compose.AsyncImage(
                 model = backgroundImageUrl,
                 contentDescription = null,
-                modifier = Modifier.fillMaxSize(),
-                contentScale = ContentScale.Crop,
+                modifier = Modifier.matchParentSize(),
+                contentScale = androidx.compose.ui.layout.ContentScale.Crop,
             )
+            // Indigo scrim keeps the white text readable over any photo.
             Box(
                 modifier = Modifier
-                    .fillMaxSize()
-                    .background(Color.Black.copy(alpha = 0.45f)),
-            )
-        } else {
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
+                    .matchParentSize()
                     .background(
-                        Brush.linearGradient(
+                        Brush.verticalGradient(
                             colors = listOf(
-                                MaterialTheme.colorScheme.primaryContainer,
-                                MaterialTheme.colorScheme.primary,
-                                MaterialTheme.colorScheme.primaryContainer,
+                                Color(0x660A1046),
+                                Color(0xCC0A1046),
                             ),
                         ),
                     ),
             )
         }
+        CrestWatermark(
+            modifier = Modifier
+                .align(Alignment.TopEnd)
+                .padding(top = 24.dp, end = 8.dp)
+                .size(160.dp)
+                .graphicsLayer { alpha = 0.10f },
+        )
+        // Frosted back pill (top-left)
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .padding(top = 16.dp, start = 20.dp)
+                .clip(RoundedCornerShape(999.dp))
+                .background(Color.White.copy(alpha = 0.18f))
+                .clickableMenu(onBack)
+                .padding(horizontal = 14.dp, vertical = 8.dp),
+        ) {
+            androidx.compose.material3.Icon(
+                Icons.AutoMirrored.Filled.ArrowBack,
+                contentDescription = "Back",
+                tint = Color.White,
+                modifier = Modifier.size(18.dp),
+            )
+            Text(
+                text = "Back to Courses",
+                style = MaterialTheme.typography.labelLarge,
+                fontWeight = FontWeight.Bold,
+                color = Color.White,
+                modifier = Modifier.padding(start = 6.dp),
+            )
+        }
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = 20.dp, vertical = 16.dp),
+                .padding(horizontal = 20.dp, vertical = 20.dp),
             verticalArrangement = Arrangement.Bottom,
         ) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier
-                    .padding(bottom = 8.dp)
-                    .clickableMenu(onBack),
-            ) {
-                androidx.compose.material3.Icon(
-                    Icons.AutoMirrored.Filled.ArrowBack,
-                    contentDescription = "Back",
-                    tint = Color.White.copy(alpha = 0.85f),
-                )
-                Text(
-                    text = "Back to Courses",
-                    style = MaterialTheme.typography.labelMedium,
-                    color = Color.White.copy(alpha = 0.85f),
-                    modifier = Modifier.padding(start = 4.dp),
-                )
-            }
             Text(
                 text = title,
                 style = MaterialTheme.typography.headlineLarge,
-                fontWeight = FontWeight.Bold,
+                fontWeight = FontWeight.ExtraBold,
                 color = Color.White,
             )
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.padding(top = 8.dp),
-            ) {
+            Spacer(Modifier.height(8.dp))
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                androidx.compose.material3.Icon(
+                    Icons.Default.LocationOn,
+                    contentDescription = null,
+                    tint = Color.White.copy(alpha = 0.85f),
+                    modifier = Modifier.size(16.dp),
+                )
+                Text(
+                    text = " RRBMU • Alwar",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = Color.White.copy(alpha = 0.85f),
+                )
                 if (paperCount > 0) {
                     Text(
-                        text = "$paperCount Papers Available",
-                        style = MaterialTheme.typography.labelMedium,
+                        text = "$paperCount Papers",
+                        style = MaterialTheme.typography.labelSmall,
                         color = Color.White,
                         modifier = Modifier
-                            .clip(RoundedCornerShape(50))
-                            .background(StitchSecondaryContainer)
-                            .padding(horizontal = 10.dp, vertical = 4.dp),
+                            .padding(start = 10.dp)
+                            .clip(RoundedCornerShape(999.dp))
+                            .background(Color.White.copy(alpha = 0.20f))
+                            .padding(horizontal = 10.dp, vertical = 3.dp),
                     )
                 }
-                Text(
-                    text = if (paperCount > 0) "  •  RRBMU Alwar" else "RRBMU Alwar",
-                    style = MaterialTheme.typography.labelMedium,
-                    color = Color.White.copy(alpha = 0.7f),
-                )
             }
         }
     }
@@ -519,16 +546,16 @@ private fun SystemTabRow(
     onSelected: (SystemType) -> Unit,
 ) {
     val tabs = systems
-        .map { it.type to it.name }
+        .map { it.type to systemTabLabel(it.type) }
         .distinctBy { it.first }
         // Firestore returns systems in doc-id (alphabetical) order; force the intended
         // Yearly → Semester → Entrance order regardless of how they come back.
         .sortedBy { it.first.ordinal }
         .ifEmpty {
             listOf(
-                SystemType.YEARLY to "Yearly System",
-                SystemType.SEMESTER to "Semester System",
-                SystemType.ENTRANCE to "Entrance Exam",
+                SystemType.YEARLY to systemTabLabel(SystemType.YEARLY),
+                SystemType.SEMESTER to systemTabLabel(SystemType.SEMESTER),
+                SystemType.ENTRANCE to systemTabLabel(SystemType.ENTRANCE),
             )
         }
     Row(
@@ -548,24 +575,28 @@ private fun SystemTabRow(
             ) {
                 Text(
                     text = label,
-                    style = MaterialTheme.typography.bodyMedium,
-                    fontWeight = if (active) FontWeight.SemiBold else FontWeight.Medium,
-                    color = if (active) MaterialTheme.colorScheme.primary
+                    style = MaterialTheme.typography.titleSmall,
+                    fontWeight = if (active) FontWeight.Bold else FontWeight.SemiBold,
+                    color = if (active) Saffron
                     else MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
                 )
                 Spacer(Modifier.height(8.dp))
                 Box(
                     modifier = Modifier
-                        .fillMaxWidth(0.8f)
-                        .height(2.dp)
-                        .clip(RoundedCornerShape(2.dp))
-                        .background(
-                            if (active) MaterialTheme.colorScheme.primary else Color.Transparent,
-                        ),
+                        .fillMaxWidth(0.7f)
+                        .height(3.dp)
+                        .clip(RoundedCornerShape(999.dp))
+                        .background(if (active) SaffronBrush else Brush.linearGradient(listOf(Color.Transparent, Color.Transparent))),
                 )
             }
         }
     }
+}
+
+private fun systemTabLabel(type: SystemType): String = when (type) {
+    SystemType.YEARLY -> "Yearly Wise"
+    SystemType.SEMESTER -> "Semester Wise"
+    SystemType.ENTRANCE -> "Entrance Exam"
 }
 
 private fun buildCourseHeroTitle(shortName: String, fullName: String): String {

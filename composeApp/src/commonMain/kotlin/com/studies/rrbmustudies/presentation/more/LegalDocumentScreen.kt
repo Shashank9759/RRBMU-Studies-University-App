@@ -1,6 +1,9 @@
 package com.studies.rrbmustudies.presentation.more
 
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -9,6 +12,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.studies.rrbmustudies.ui.components.RrbmuTopBar
 import com.studies.rrbmustudies.ui.theme.AboutDefaults
@@ -25,15 +29,26 @@ fun LegalDocumentScreen(
             RrbmuTopBar(showBack = true, onBack = onBack)
         },
     ) { padding ->
-        Text(
-            text = doc?.body ?: "Document not found.",
-            style = MaterialTheme.typography.bodyLarge,
-            color = MaterialTheme.colorScheme.onSurface,
+        Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
                 .verticalScroll(rememberScrollState())
-                .padding(horizontal = RrbmuDimens.screenHorizontal, vertical = RrbmuDimens.spacingMd),
-        )
+                .padding(horizontal = RrbmuDimens.screenHorizontal, vertical = RrbmuDimens.spacingLg),
+        ) {
+            Text(
+                text = doc?.title ?: "Document",
+                style = MaterialTheme.typography.displaySmall,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.primary,
+            )
+            Spacer(Modifier.height(RrbmuDimens.spacingLg))
+            Text(
+                text = doc?.body ?: "Document not found.",
+                style = MaterialTheme.typography.bodyLarge,
+                color = MaterialTheme.colorScheme.onSurface,
+            )
+            Spacer(Modifier.height(RrbmuDimens.spacingXl))
+        }
     }
 }

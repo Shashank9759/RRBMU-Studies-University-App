@@ -27,10 +27,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.studies.rrbmustudies.domain.model.Paper
+import com.studies.rrbmustudies.ui.theme.Saffron
+import com.studies.rrbmustudies.ui.theme.SaffronDeep
 import com.studies.rrbmustudies.ui.theme.StitchOnPrimaryFixed
 import com.studies.rrbmustudies.ui.theme.StitchPrimaryFixed
 import com.studies.rrbmustudies.ui.theme.subjectAccentColor
@@ -64,61 +67,80 @@ fun StitchPaperListCard(
     onDownloadClick: (() -> Unit)? = null,
 ) {
     val accent = subjectAccentColor(subject)
-    Card(
-        onClick = onClick,
-        modifier = modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(12.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLowest),
-        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .shadow(8.dp, RoundedCornerShape(20.dp), spotColor = androidx.compose.ui.graphics.Color(0xFF0A1046))
+            .clip(RoundedCornerShape(20.dp))
+            .background(MaterialTheme.colorScheme.surfaceContainerLowest)
+            .clickable(onClick = onClick),
+        verticalAlignment = Alignment.CenterVertically,
     ) {
-        Row(
-            modifier = Modifier.padding(16.dp),
-            verticalAlignment = Alignment.CenterVertically,
+        Box(
+            modifier = Modifier
+                .padding(vertical = 14.dp)
+                .padding(start = 6.dp)
+                .width(4.dp)
+                .height(64.dp)
+                .clip(RoundedCornerShape(999.dp))
+                .background(accent),
+        )
+        Column(
+            modifier = Modifier
+                .weight(1f)
+                .padding(start = 14.dp, top = 16.dp, bottom = 16.dp),
         ) {
-            Box(
-                modifier = Modifier
-                    .width(4.dp)
-                    .height(48.dp)
-                    .clip(RoundedCornerShape(50))
-                    .background(accent),
-            )
-            Spacer(Modifier.width(12.dp))
-            Column(modifier = Modifier.weight(1f)) {
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
                 Text(
-                    text = title,
-                    style = MaterialTheme.typography.titleLarge,
-                    maxLines = 2,
-                    overflow = TextOverflow.Ellipsis,
-                )
-                Spacer(Modifier.height(6.dp))
-                Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                    MetadataTag("CODE: $paperCode")
-                    MetadataTag("Year: $year")
-                }
-                Spacer(Modifier.height(6.dp))
-                Text(
-                    text = subject,
-                    style = MaterialTheme.typography.labelMedium,
-                    color = MaterialTheme.colorScheme.primaryContainer,
+                    text = subject.uppercase(),
+                    style = MaterialTheme.typography.labelSmall,
+                    color = accent,
                     modifier = Modifier
-                        .clip(RoundedCornerShape(4.dp))
-                        .background(MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.1f))
-                        .padding(horizontal = 8.dp, vertical = 2.dp),
+                        .clip(RoundedCornerShape(999.dp))
+                        .background(accent.copy(alpha = 0.12f))
+                        .padding(horizontal = 10.dp, vertical = 4.dp),
+                )
+                Text(
+                    text = year.toString(),
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(999.dp))
+                        .background(MaterialTheme.colorScheme.surfaceContainerHigh)
+                        .padding(horizontal = 10.dp, vertical = 4.dp),
                 )
             }
-            IconButton(
-                onClick = { onDownloadClick?.invoke() ?: onClick() },
-                modifier = Modifier
-                    .size(40.dp)
-                    .clip(CircleShape)
-                    .background(MaterialTheme.colorScheme.secondaryContainer.copy(alpha = 0.12f)),
-            ) {
-                Icon(
-                    Icons.Default.Download,
-                    contentDescription = "Download",
-                    tint = MaterialTheme.colorScheme.secondary,
-                )
-            }
+            Spacer(Modifier.height(8.dp))
+            Text(
+                text = title,
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onSurface,
+                maxLines = 2,
+                overflow = TextOverflow.Ellipsis,
+            )
+            Spacer(Modifier.height(4.dp))
+            Text(
+                text = "CODE: ${paperCode.uppercase()}",
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
+        Box(
+            modifier = Modifier
+                .padding(end = 16.dp)
+                .size(48.dp)
+                .shadow(8.dp, CircleShape, spotColor = Saffron)
+                .clip(CircleShape)
+                .background(Saffron.copy(alpha = 0.14f))
+                .clickable { onDownloadClick?.invoke() ?: onClick() },
+            contentAlignment = Alignment.Center,
+        ) {
+            Icon(
+                Icons.Default.Download,
+                contentDescription = "Download",
+                tint = SaffronDeep,
+            )
         }
     }
 }

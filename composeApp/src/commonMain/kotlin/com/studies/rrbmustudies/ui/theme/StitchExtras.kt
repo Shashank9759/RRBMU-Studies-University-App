@@ -14,6 +14,24 @@ fun courseAccentColor(shortName: String): Color = when {
 
 fun courseBorderAccent(shortName: String): Color = courseAccentColor(shortName).copy(alpha = 0.35f)
 
+/** Assign each course a stable jewel-tone identity. Well-known courses get a
+ *  curated tone (matching the design mockups); anything else hashes into the
+ *  palette so it stays consistent across the app. */
+fun courseJewel(shortName: String): JewelTone {
+    val key = shortName.uppercase().replace(".", "").replace(" ", "")
+    return when {
+        key.startsWith("BSC") || key.startsWith("MSC") -> JewelViolet
+        key.startsWith("BA") && !key.startsWith("BALLB") -> JewelEmerald
+        key.startsWith("BCOM") || key.startsWith("MCOM") -> JewelRuby
+        key.startsWith("BCA") || key.startsWith("MCA") -> JewelSky
+        key.startsWith("BBA") || key.startsWith("MBA") -> JewelAmber
+        key.startsWith("BED") || key.startsWith("MED") -> JewelRose
+        key.startsWith("BALLB") || key.contains("LLB") -> JewelIndigo
+        key.startsWith("BDS") || key.contains("MBBS") -> JewelTeal
+        else -> JewelPalette[kotlin.math.abs(key.hashCode()) % JewelPalette.size]
+    }
+}
+
 fun subjectAccentColor(subject: String): Color {
     val hash = subject.lowercase().hashCode()
     val colors = listOf(SubjectBlue, SubjectIndigo, SubjectEmerald, SubjectAmber, SubjectRose, SubjectSky)

@@ -1,10 +1,20 @@
 {
     "logs": [
         {
-            "outputFile": "com.studies.rrbmustudies.composeApp-mergeDebugResources-3:/values-v23/values-v23.xml",
+            "outputFile": "com.studies.rrbmustudies.composeApp-mergeDebugResources-80:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/caches/8.10/transforms/aa1fa313bdd7c1c104f8abf4eaa63b99/transformed/appcompat-1.7.0/res/values-v23/values-v23.xml",
+                    "source": "/Users/shashankranjan/.gradle/caches/8.9/transforms/a7696b14d4499a4b1f35f570a5409b5d/transformed/work-runtime-2.7.0/res/values-v23/values-v23.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,121",
+                        "endColumns": "65,62",
+                        "endOffsets": "116,179"
+                    }
+                },
+                {
+                    "source": "/Users/shashankranjan/.gradle/caches/8.9/transforms/1d0002dc27460573ba3e0843c29513e0/transformed/appcompat-1.7.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -20,16 +30,6 @@
                         "endLines": "4,5,6,7,21,35,36,37,40,44,45,46,47,51",
                         "endColumns": "134,134,74,86,12,12,118,126,12,12,114,106,112,12",
                         "endOffsets": "314,449,524,611,1349,2099,2218,2345,2567,2791,2906,3013,3126,3356"
-                    }
-                },
-                {
-                    "source": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/caches/8.10/transforms/60be6f9e419587f7ac9bcd95e246ba72/transformed/work-runtime-2.7.0/res/values-v23/values-v23.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,121",
-                        "endColumns": "65,62",
-                        "endOffsets": "116,179"
                     }
                 }
             ]

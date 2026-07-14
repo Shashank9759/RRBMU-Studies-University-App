@@ -3,6 +3,7 @@ package com.studies.rrbmustudies.data.repository
 import com.studies.rrbmustudies.data.mapper.toDomain
 import com.studies.rrbmustudies.data.mapper.toDto
 import com.studies.rrbmustudies.data.remote.CourseRemoteDataSource
+import com.studies.rrbmustudies.data.remote.PaperRemoteDataSource
 import com.studies.rrbmustudies.data.remote.StorageRemoteDataSource
 import com.studies.rrbmustudies.domain.model.Course
 import com.studies.rrbmustudies.domain.model.CourseLevel
@@ -10,13 +11,19 @@ import com.studies.rrbmustudies.domain.model.CourseSeed
 import com.studies.rrbmustudies.domain.model.CourseSystem
 import com.studies.rrbmustudies.domain.model.Part
 import com.studies.rrbmustudies.domain.repository.CourseRepository
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 
+@OptIn(ExperimentalCoroutinesApi::class)
 class CourseRepositoryImpl(
     private val remote: CourseRemoteDataSource,
     private val storage: StorageRemoteDataSource,
+    private val paperRemote: PaperRemoteDataSource,
 ) : CourseRepository {
 
     private val bundledCourses: List<Course> by lazy {
@@ -54,6 +61,31 @@ class CourseRepositoryImpl(
             .map { docs ->
                 docs.map { (id, dto) -> dto.toDomain(id, courseId, systemId) }
                     .sortedBy { it.order }
+            }
+            // The stored paperCount is denormalized and historically never
+            // incremented on upload, so derive the real count from the live
+            // published papers under each part.
+            .flatMapLatest { parts ->
+                if (parts.isEmpty()) {
+                    flowOf(parts)
+                } else {
+                    combine(
+                        parts.map { part ->
+                            paperRemote.observePapers(
+                                courseId = courseId,
+                                systemId = systemId,
+                                partId = part.id,
+                                includeUnpublished = false,
+                            )
+                                .map { it.size }
+                                .catch { emit(part.paperCount) }
+                        },
+                    ) { counts ->
+                        parts.mapIndexed { index, part ->
+                            part.copy(paperCount = counts[index])
+                        }
+                    }
+                }
             }
             .catch {
                 emit(

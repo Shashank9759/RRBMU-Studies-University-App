@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.studies.rrbmustudies",
+      "sha256_cert_fingerprints": [
+        "E2:93:9A:11:09:4E:99:9B:8E:D9:DE:C9:FD:C2:1E:31:4F:A3:3C:29:B0:CA:63:C4:59:3C:EB:10:8F:13:88:1A"
+      ]
+    }
+  }
+]

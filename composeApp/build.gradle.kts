@@ -70,12 +70,19 @@ kotlin {
     }
 }
 
+compose.resources {
+    publicResClass = true
+    packageOfResClass = "com.studies.rrbmustudies.resources"
+    generateResClass = always
+}
+
 // Google-provided test IDs used when a real value is absent from local.properties.
 val testAdmobAppId = "ca-app-pub-3940256099942544~3347511713"
 val testBannerId = "ca-app-pub-3940256099942544/6300978111"
 val testInterstitialId = "ca-app-pub-3940256099942544/1033173712"
 val testRewardedId = "ca-app-pub-3940256099942544/5224354917"
 val testRewardedInterstitialId = "ca-app-pub-3940256099942544/5354046379"
+val testNativeId = "ca-app-pub-3940256099942544/2247696110"
 
 val localProps = Properties().apply {
     val f = rootProject.file("local.properties")
@@ -105,6 +112,7 @@ android {
         buildConfigField("String", "ADMOB_INTERSTITIAL", "\"$testInterstitialId\"")
         buildConfigField("String", "ADMOB_REWARDED", "\"$testRewardedId\"")
         buildConfigField("String", "ADMOB_REWARDED_INTERSTITIAL", "\"$testRewardedInterstitialId\"")
+        buildConfigField("String", "ADMOB_NATIVE", "\"$testNativeId\"")
     }
 
     packaging {
@@ -138,6 +146,10 @@ android {
             buildConfigField(
                 "String", "ADMOB_REWARDED_INTERSTITIAL",
                 "\"${adProp("admob.rewarded.interstitial", testRewardedInterstitialId)}\"",
+            )
+            buildConfigField(
+                "String", "ADMOB_NATIVE",
+                "\"${adProp("admob.native.default", testNativeId)}\"",
             )
         }
     }

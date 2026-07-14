@@ -5,3 +5,6 @@ import androidx.compose.ui.Modifier
 
 @Composable
 actual fun AdMobBanner(modifier: Modifier, adUnitId: String?) = Unit
+
+@Composable
+actual fun NativeAdCard(modifier: Modifier) = Unit

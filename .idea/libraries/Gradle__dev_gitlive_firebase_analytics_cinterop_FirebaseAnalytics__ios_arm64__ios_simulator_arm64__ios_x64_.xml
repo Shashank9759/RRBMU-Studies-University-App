@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: dev.gitlive:firebase-analytics-cinterop-FirebaseAnalytics:(ios_arm64, ios_simulator_arm64, ios_x64)" type="kotlin.native" external-system-id="GRADLE">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/.kotlin/metadata/kotlinTransformedCInteropMetadataLibraries/dev.gitlive-firebase-analytics-2.1.0-iosMain-cinterop/dev.gitlive_firebase-analytics-cinterop-FirebaseAnalytics-PoRpVQ.klib!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

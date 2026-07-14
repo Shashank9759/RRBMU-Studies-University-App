@@ -1,6 +1,7 @@
 package com.studies.rrbmustudies.ui.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
@@ -20,7 +21,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -46,11 +49,13 @@ fun SearchBar(
     Box(
         modifier = modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 8.dp)
+            .padding(horizontal = 20.dp, vertical = 8.dp)
+            .shadow(8.dp, shape, spotColor = androidx.compose.ui.graphics.Color(0xFF0A1046))
             .clip(shape)
-            .background(MaterialTheme.colorScheme.surfaceContainerLow)
+            .background(MaterialTheme.colorScheme.surfaceContainerLowest)
+            .border(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f), shape)
             .then(clickModifier)
-            .padding(horizontal = 16.dp, vertical = 14.dp),
+            .padding(horizontal = 18.dp, vertical = 15.dp),
     ) {
         Icon(
             Icons.Default.Search,
@@ -69,6 +74,8 @@ fun SearchBar(
                 } else {
                     MaterialTheme.colorScheme.onSurface
                 },
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
                 modifier = Modifier
                     .align(Alignment.CenterStart)
                     .padding(start = 36.dp, end = 36.dp),
@@ -92,6 +99,8 @@ fun SearchBar(
                             placeholder,
                             style = MaterialTheme.typography.bodyLarge,
                             color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f),
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis,
                         )
                     }
                     inner()

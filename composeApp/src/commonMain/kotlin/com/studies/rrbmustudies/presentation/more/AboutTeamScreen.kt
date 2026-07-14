@@ -34,18 +34,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.studies.rrbmustudies.ui.components.CrestWatermark
 import com.studies.rrbmustudies.ui.components.MoreMenuRow
 import com.studies.rrbmustudies.ui.components.RrbmuTopBar
 import com.studies.rrbmustudies.ui.components.TeamMemberCard
 import com.studies.rrbmustudies.ui.theme.AboutDefaults
 import com.studies.rrbmustudies.ui.theme.RrbmuDimens
 import com.studies.rrbmustudies.ui.theme.StitchPrimaryContainer
-import com.studies.rrbmustudies.ui.theme.StitchTertiaryContainer
+import com.studies.rrbmustudies.ui.theme.auroraHeroBrush
 
 @Composable
 fun AboutTeamScreen(
@@ -178,13 +179,16 @@ private fun AboutHeroSection() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .background(
-                Brush.verticalGradient(
-                    colors = listOf(StitchPrimaryContainer, StitchTertiaryContainer),
-                ),
-            )
+            .background(auroraHeroBrush())
             .padding(vertical = 48.dp, horizontal = RrbmuDimens.spacingLg),
     ) {
+        CrestWatermark(
+            modifier = Modifier
+                .align(Alignment.TopEnd)
+                .padding(top = 12.dp, end = 4.dp)
+                .size(150.dp)
+                .graphicsLayer { alpha = 0.10f },
+        )
         Column(
             modifier = Modifier.fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally,

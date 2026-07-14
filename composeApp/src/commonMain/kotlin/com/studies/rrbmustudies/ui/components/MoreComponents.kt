@@ -23,6 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -30,6 +31,59 @@ import com.studies.rrbmustudies.ui.theme.RrbmuDimens
 import com.studies.rrbmustudies.ui.theme.StitchPrimaryContainer
 import com.studies.rrbmustudies.ui.theme.StitchSecondaryContainer
 import com.studies.rrbmustudies.ui.theme.StitchTertiaryContainer
+
+@Composable
+fun MoreBrandedHeader(
+    modifier: Modifier = Modifier,
+) {
+    Box(
+        modifier = modifier
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(24.dp))
+            .background(com.studies.rrbmustudies.ui.theme.auroraHeroBrush()),
+    ) {
+        CrestWatermark(
+            modifier = Modifier
+                .align(Alignment.CenterEnd)
+                .padding(end = 8.dp)
+                .size(150.dp)
+                .androidx_alpha(0.10f),
+        )
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(28.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            Box(
+                modifier = Modifier
+                    .size(72.dp)
+                    .clip(androidx.compose.foundation.shape.CircleShape)
+                    .background(Color.White.copy(alpha = 0.14f)),
+                contentAlignment = Alignment.Center,
+            ) {
+                BrandLogo(size = 52.dp)
+            }
+            androidx.compose.foundation.layout.Spacer(Modifier.size(14.dp))
+            Text(
+                text = "RRBMU Studies",
+                style = MaterialTheme.typography.displaySmall.copy(
+                    fontFamily = com.studies.rrbmustudies.ui.theme.FrauncesFamily(),
+                ),
+                fontWeight = FontWeight.Bold,
+                color = Color.White,
+            )
+            Text(
+                text = "ACADEMIC EXCELLENCE PORTAL",
+                style = MaterialTheme.typography.labelSmall,
+                color = Color.White.copy(alpha = 0.8f),
+            )
+        }
+    }
+}
+
+private fun Modifier.androidx_alpha(value: Float): Modifier =
+    this.then(Modifier.graphicsLayer { alpha = value })
 
 @Composable
 fun MoreSectionHeader(

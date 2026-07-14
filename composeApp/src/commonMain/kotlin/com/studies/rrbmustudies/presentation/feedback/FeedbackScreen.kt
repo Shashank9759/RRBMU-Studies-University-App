@@ -19,11 +19,11 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.CheckCircle
-import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -40,7 +40,10 @@ import com.studies.rrbmustudies.ui.components.DefaultFeedbackTags
 import com.studies.rrbmustudies.ui.components.EmojiRatingBar
 import com.studies.rrbmustudies.ui.components.FeedbackHeroIllustration
 import com.studies.rrbmustudies.ui.components.FeedbackTagChipRow
+import com.studies.rrbmustudies.ui.components.SaffronButton
+import com.studies.rrbmustudies.ui.theme.FrauncesFamily
 import com.studies.rrbmustudies.ui.theme.RrbmuDimens
+import com.studies.rrbmustudies.ui.theme.Saffron
 import com.studies.rrbmustudies.ui.theme.StitchPrimaryContainer
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -128,6 +131,11 @@ fun FeedbackScreen(
                     .height(140.dp),
                 placeholder = { Text("Tell us more (optional)") },
                 shape = RoundedCornerShape(RrbmuDimens.cardRadius),
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedBorderColor = Saffron,
+                    unfocusedBorderColor = MaterialTheme.colorScheme.outlineVariant,
+                    cursorColor = Saffron,
+                ),
             )
 
             state.error?.let {
@@ -140,14 +148,12 @@ fun FeedbackScreen(
 
             Spacer(modifier = Modifier.height(RrbmuDimens.spacingLg))
 
-            Button(
+            SaffronButton(
+                text = if (state.isSubmitting) "Submitting…" else "Submit Feedback",
                 onClick = viewModel::submit,
                 enabled = state.rating > 0 && !state.isSubmitting,
                 modifier = Modifier.fillMaxWidth(),
-                shape = RoundedCornerShape(RrbmuDimens.buttonRadius),
-            ) {
-                Text(if (state.isSubmitting) "Submitting…" else "Submit Feedback")
-            }
+            )
 
             Text(
                 text = "Your feedback helps us build a better RRBMU Studies for everyone.",
@@ -176,8 +182,8 @@ private fun RowHeader(onBack: () -> Unit) {
         }
         Text(
             text = "RRBMU Studies",
-            style = MaterialTheme.typography.titleLarge,
-            fontWeight = FontWeight.ExtraBold,
+            style = MaterialTheme.typography.titleLarge.copy(fontFamily = FrauncesFamily()),
+            fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.primary,
         )
         Spacer(modifier = Modifier.size(48.dp))
@@ -241,13 +247,17 @@ fun FeedbackSuccessScreen(onBack: () -> Unit) {
             }
         }
         Spacer(modifier = Modifier.height(RrbmuDimens.spacingXl))
-        Button(
+        SaffronButton(
+            text = "Back to More",
             onClick = onBack,
             modifier = Modifier.fillMaxWidth(),
-            shape = RoundedCornerShape(RrbmuDimens.buttonRadius),
-        ) {
-            Text("Back to More")
-            Icon(Icons.AutoMirrored.Filled.ArrowForward, contentDescription = null)
-        }
+            leading = {
+                Icon(
+                    Icons.AutoMirrored.Filled.ArrowForward,
+                    contentDescription = null,
+                    tint = androidx.compose.ui.graphics.Color.White,
+                )
+            },
+        )
     }
 }

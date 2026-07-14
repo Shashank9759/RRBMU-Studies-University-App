@@ -8,15 +8,20 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.pullrefresh.PullRefreshIndicator
 import androidx.compose.material.pullrefresh.pullRefresh
 import androidx.compose.material.pullrefresh.rememberPullRefreshState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -25,14 +30,16 @@ import com.studies.rrbmustudies.domain.model.Course
 import com.studies.rrbmustudies.domain.model.HomeAd
 import com.studies.rrbmustudies.domain.model.Paper
 import com.studies.rrbmustudies.ui.components.AdBannerSlot
-import com.studies.rrbmustudies.ui.components.AdCarousel
 import com.studies.rrbmustudies.ui.components.EmptyState
 import com.studies.rrbmustudies.ui.components.ErrorState
+import com.studies.rrbmustudies.ui.components.HeroAnnouncementCarousel
 import com.studies.rrbmustudies.ui.components.LoadingShimmer
 import com.studies.rrbmustudies.ui.components.QuickAccessCourseCard
 import com.studies.rrbmustudies.ui.components.RecentPaperCard
 import com.studies.rrbmustudies.ui.components.SearchBar
 import com.studies.rrbmustudies.ui.components.SectionHeader
+import com.studies.rrbmustudies.ui.components.entrance
+import com.studies.rrbmustudies.ui.components.entranceProgress
 import com.studies.rrbmustudies.ui.state.UiState
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -44,6 +51,7 @@ fun HomeScreen(
     onSearchClick: () -> Unit,
     onAdClick: (HomeAd) -> Unit,
     onSeeAllCourses: () -> Unit,
+    onSearchBarVisibilityChanged: (Boolean) -> Unit = {},
     viewModel: HomeViewModel = koinViewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -52,6 +60,13 @@ fun HomeScreen(
         refreshing = isRefreshing,
         onRefresh = viewModel::refresh,
     )
+    val listState = rememberLazyListState()
+    val searchBarVisible by remember {
+        derivedStateOf { listState.firstVisibleItemIndex == 0 }
+    }
+    LaunchedEffect(searchBarVisible) {
+        onSearchBarVisibilityChanged(searchBarVisible)
+    }
 
     when (val uiState = state) {
         is UiState.Loading -> LoadingShimmer()
@@ -68,8 +83,9 @@ fun HomeScreen(
                     .pullRefresh(pullRefreshState),
             ) {
                 LazyColumn(
-                    contentPadding = PaddingValues(bottom = 24.dp),
-                    verticalArrangement = Arrangement.spacedBy(6.dp),
+                    state = listState,
+                    contentPadding = PaddingValues(top = 8.dp, bottom = 28.dp),
+                    verticalArrangement = Arrangement.spacedBy(4.dp),
                 ) {
                     item {
                         SearchBar(
@@ -83,7 +99,8 @@ fun HomeScreen(
                     }
                     if (data.ads.isNotEmpty()) {
                         item {
-                            AdCarousel(
+                            Spacer(Modifier.height(8.dp))
+                            HeroAnnouncementCarousel(
                                 ads = data.ads,
                                 onAdClick = onAdClick,
                                 autoScrollIntervalMs = data.carouselSettings.slideIntervalSeconds * 1000L,
@@ -92,6 +109,7 @@ fun HomeScreen(
                     }
                     item { AdBannerSlot() }
                     item {
+                        Spacer(Modifier.height(12.dp))
                         SectionHeader(
                             title = "Select Course",
                             actionLabel = "View All",
@@ -106,18 +124,22 @@ fun HomeScreen(
                             )
                         } else {
                             Column(
-                                modifier = Modifier.padding(horizontal = 16.dp),
-                                verticalArrangement = Arrangement.spacedBy(10.dp),
+                                modifier = Modifier.padding(horizontal = 20.dp),
+                                verticalArrangement = Arrangement.spacedBy(14.dp),
                             ) {
-                                courseRows.forEach { rowCourses ->
+                                courseRows.forEachIndexed { rowIndex, rowCourses ->
                                     Row(
-                                        horizontalArrangement = Arrangement.spacedBy(10.dp),
+                                        horizontalArrangement = Arrangement.spacedBy(14.dp),
                                     ) {
-                                        rowCourses.forEach { course ->
+                                        rowCourses.forEachIndexed { colIndex, course ->
+                                            val delay = (rowIndex * 2 + colIndex) * 70
+                                            val p = entranceProgress(delay)
                                             QuickAccessCourseCard(
                                                 course = course,
                                                 onClick = { onCourseClick(course) },
-                                                modifier = Modifier.weight(1f),
+                                                modifier = Modifier
+                                                    .weight(1f)
+                                                    .entrance(p),
                                             )
                                         }
                                         if (rowCourses.size == 1) {
@@ -129,6 +151,7 @@ fun HomeScreen(
                         }
                     }
                     item {
+                        Spacer(Modifier.height(16.dp))
                         SectionHeader(
                             title = "Recently Added",
                             actionLabel = if (data.recentPapers.isNotEmpty()) "View More" else null,
@@ -147,8 +170,8 @@ fun HomeScreen(
                             Row(
                                 modifier = Modifier
                                     .horizontalScroll(rememberScrollState())
-                                    .padding(horizontal = 16.dp),
-                                horizontalArrangement = Arrangement.spacedBy(12.dp),
+                                    .padding(horizontal = 20.dp),
+                                horizontalArrangement = Arrangement.spacedBy(14.dp),
                             ) {
                                 data.recentPapers.forEach { paper ->
                                     RecentPaperCard(

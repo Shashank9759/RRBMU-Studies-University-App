@@ -1,7 +1,6 @@
 package com.studies.rrbmustudies.ui.components
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -25,6 +24,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -175,8 +175,9 @@ fun SettingsToggle(
         onCheckedChange = onCheckedChange,
         modifier = modifier,
         colors = SwitchDefaults.colors(
-            checkedThumbColor = MaterialTheme.colorScheme.onPrimary,
-            checkedTrackColor = MaterialTheme.colorScheme.primary,
+            checkedThumbColor = androidx.compose.ui.graphics.Color.White,
+            checkedTrackColor = com.studies.rrbmustudies.ui.theme.Saffron,
+            checkedBorderColor = com.studies.rrbmustudies.ui.theme.Saffron,
         ),
     )
 }
@@ -189,13 +190,13 @@ fun SettingsCard(
     Column(
         modifier = modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(RrbmuDimens.cardRadius))
-            .background(MaterialTheme.colorScheme.surfaceContainerLowest)
-            .border(
-                width = 1.dp,
-                color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.35f),
+            .shadow(
+                elevation = 8.dp,
                 shape = RoundedCornerShape(RrbmuDimens.cardRadius),
-            ),
+                spotColor = androidx.compose.ui.graphics.Color(0xFF0A1046),
+            )
+            .clip(RoundedCornerShape(RrbmuDimens.cardRadius))
+            .background(MaterialTheme.colorScheme.surfaceContainerLowest),
     ) {
         content()
     }

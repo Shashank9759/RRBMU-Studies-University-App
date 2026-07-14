@@ -26,6 +26,7 @@ import org.koin.dsl.module
 
 val presentationModule = module {
     single<PaperAdGateway> { NoOpPaperAdGateway }
+    single<com.studies.rrbmustudies.ads.NavAdGateway> { com.studies.rrbmustudies.ads.NoOpNavAdGateway }
     viewModelOf(::AdminViewModel)
     viewModelOf(::HomeViewModel)
     viewModelOf(::CoursesViewModel)

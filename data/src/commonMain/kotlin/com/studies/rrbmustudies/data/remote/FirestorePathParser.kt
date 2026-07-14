@@ -8,21 +8,27 @@ data class PaperPathIds(
 )
 
 /**
- * Parses Firestore collection-group document paths:
- * `courses/{courseId}/systems/{systemId}/parts/{partId}/papers/{paperId}`
+ * Parses Firestore collection-group document paths of the shape
+ * `courses/{courseId}/systems/{systemId}/parts/{partId}/papers/{paperId}`.
+ *
+ * Depending on platform/SDK the reference path may carry a
+ * `projects/{p}/databases/{db}/documents/` prefix, so we anchor on the
+ * `courses` segment instead of assuming it is first.
  */
 fun parsePaperDocumentPath(path: String): PaperPathIds? {
     val segments = path.trim('/').split('/')
-    if (segments.size < 8) return null
-    if (segments[0] != "courses" || segments[2] != "systems" ||
-        segments[4] != "parts" || segments[6] != "papers"
+    val start = segments.indexOf("courses")
+    if (start == -1 || segments.size < start + 8) return null
+    if (segments[start + 2] != "systems" ||
+        segments[start + 4] != "parts" ||
+        segments[start + 6] != "papers"
     ) {
         return null
     }
     return PaperPathIds(
-        courseId = segments[1],
-        systemId = segments[3],
-        partId = segments[5],
-        paperId = segments[7],
+        courseId = segments[start + 1],
+        systemId = segments[start + 3],
+        partId = segments[start + 5],
+        paperId = segments[start + 7],
     )
 }

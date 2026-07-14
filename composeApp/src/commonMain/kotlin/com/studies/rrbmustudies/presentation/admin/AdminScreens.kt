@@ -46,7 +46,6 @@ import androidx.compose.material.icons.filled.PictureAsPdf
 import androidx.compose.material.icons.filled.Publish
 import androidx.compose.material.icons.filled.UploadFile
 import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.DropdownMenu
@@ -80,6 +79,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.studies.rrbmustudies.domain.model.AppNotification
 import com.studies.rrbmustudies.domain.model.HomeAd
 import com.studies.rrbmustudies.ui.components.RrbmuTopBar
+import com.studies.rrbmustudies.ui.components.SaffronButton
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
@@ -146,13 +146,12 @@ fun AdminLoginScreen(
                 visualTransformation = PasswordVisualTransformation(),
             )
             state.error?.let { Text(it, color = MaterialTheme.colorScheme.error) }
-            Button(
+            SaffronButton(
+                text = if (state.isLoading) "Signing in…" else "Sign In",
                 onClick = viewModel::signIn,
                 enabled = !state.isLoading,
                 modifier = Modifier.fillMaxWidth(),
-            ) {
-                Text(if (state.isLoading) "Signing in…" else "Sign In")
-            }
+            )
         }
     }
 }
@@ -392,14 +391,12 @@ private fun CarouselTimingCard(
                     enabled = value < 60,
                 ) { Icon(Icons.Default.Add, contentDescription = "Increase") }
             }
-            Button(
+            SaffronButton(
+                text = if (value == seconds) "Saved" else "Save duration",
                 onClick = { onSave(value) },
                 enabled = value != seconds,
                 modifier = Modifier.fillMaxWidth(),
-                shape = RoundedCornerShape(RrbmuDimens.buttonRadius),
-            ) {
-                Text(if (value == seconds) "Saved" else "Save duration")
-            }
+            )
         }
     }
 }
@@ -1062,26 +1059,17 @@ private fun UploadPaperBottomBar(
             ) {
                 Text(if (isUploading) "Saving…" else "Save Draft")
             }
-            Button(
+            SaffronButton(
+                text = if (isUploading) "Publishing…" else "Save & Publish",
                 onClick = onSaveAndPublish,
                 enabled = !isUploading,
-                shape = RoundedCornerShape(50),
                 modifier = Modifier
                     .weight(1f)
                     .height(52.dp),
-            ) {
-                if (isUploading) {
-                    androidx.compose.material3.CircularProgressIndicator(
-                        modifier = Modifier.size(18.dp),
-                        strokeWidth = 2.dp,
-                        color = MaterialTheme.colorScheme.onPrimary,
-                    )
-                    Text("  Publishing…")
-                } else {
-                    Icon(Icons.Default.Publish, contentDescription = null)
-                    Text("  Save & Publish")
-                }
-            }
+                leading = if (isUploading) null else {
+                    { Icon(Icons.Default.Publish, contentDescription = null, tint = androidx.compose.ui.graphics.Color.White) }
+                },
+            )
         }
     }
 }

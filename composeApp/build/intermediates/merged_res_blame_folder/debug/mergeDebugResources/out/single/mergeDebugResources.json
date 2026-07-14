@@ -1,82 +1,78 @@
 [
     {
-        "merged": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-debug-5:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-androidMain-7:/drawable/ic_launcher_foreground.xml"
+        "merged": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-debug-82:/drawable_ic_launcher_foreground_inset.xml.flat",
+        "source": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-androidMain-84:/drawable/ic_launcher_foreground_inset.xml"
     },
     {
-        "merged": "com.studies.rrbmustudies.composeApp-debug-5:/drawable_ic_launcher_foreground_inset.xml.flat",
-        "source": "com.studies.rrbmustudies.composeApp-androidMain-7:/drawable/ic_launcher_foreground_inset.xml"
+        "merged": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-debug-82:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-androidMain-84:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-debug-5:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-androidMain-7:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "com.studies.rrbmustudies.composeApp-debug-82:/drawable_ic_launcher_foreground_inset.xml.flat",
+        "source": "com.studies.rrbmustudies.composeApp-androidMain-84:/drawable/ic_launcher_foreground_inset.xml"
     },
     {
-        "merged": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-debug-5:/drawable_ic_stat_rrbmu.xml.flat",
-        "source": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-androidMain-7:/drawable/ic_stat_rrbmu.xml"
+        "merged": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-debug-82:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-androidMain-84:/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-debug-5:/drawable_univ_logo.png.flat",
-        "source": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-androidMain-7:/drawable/univ_logo.png"
+        "merged": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-debug-82:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-androidMain-84:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-debug-5:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-androidMain-7:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-debug-82:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-androidMain-84:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-debug-5:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-androidMain-7:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-debug-82:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-androidMain-84:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-debug-5:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-androidMain-7:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-debug-82:/drawable_ic_launcher_foreground_bitmap.png.flat",
+        "source": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-androidMain-84:/drawable/ic_launcher_foreground_bitmap.png"
     },
     {
-        "merged": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-debug-5:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-androidMain-7:/mipmap-hdpi/ic_launcher.png"
+        "merged": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-debug-82:/drawable_ic_stat_rrbmu.xml.flat",
+        "source": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-androidMain-84:/drawable/ic_stat_rrbmu.xml"
     },
     {
-        "merged": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-debug-5:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-androidMain-7:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-debug-82:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-androidMain-84:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-debug-5:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-androidMain-7:/mipmap-mdpi/ic_launcher.png"
+        "merged": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-debug-82:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-androidMain-84:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-debug-5:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-androidMain-7:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-debug-82:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-androidMain-84:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-debug-5:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-androidMain-7:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-debug-82:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-androidMain-84:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.studies.rrbmustudies.composeApp-debug-5:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.studies.rrbmustudies.composeApp-androidMain-7:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-debug-82:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-androidMain-84:/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.studies.rrbmustudies.composeApp-debug-5:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.studies.rrbmustudies.composeApp-androidMain-7:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-debug-82:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-androidMain-84:/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-debug-5:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-androidMain-7:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-debug-82:/drawable_univ_logo.png.flat",
+        "source": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-androidMain-84:/drawable/univ_logo.png"
     },
     {
-        "merged": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-debug-5:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-androidMain-7:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-debug-82:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-androidMain-84:/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-debug-5:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-androidMain-7:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-debug-82:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-androidMain-84:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-debug-5:/drawable_ic_launcher_background.xml.flat",
-        "source": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-androidMain-7:/drawable/ic_launcher_background.xml"
-    },
-    {
-        "merged": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-debug-5:/drawable_ic_launcher_foreground_bitmap.png.flat",
-        "source": "/private/var/folders/w9/m6p9nkn52x5flmh0l_hpkksr0000gn/T/cursor-sandbox-cache/4ef4c4c02cd36cebfa66071d2def920f/gradle/daemon/8.10/com.studies.rrbmustudies.composeApp-androidMain-7:/drawable/ic_launcher_foreground_bitmap.png"
+        "merged": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-debug-82:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/shashankranjan/.gradle/daemon/8.9/com.studies.rrbmustudies.composeApp-androidMain-84:/mipmap-xxxhdpi/ic_launcher_round.png"
     }
 ]

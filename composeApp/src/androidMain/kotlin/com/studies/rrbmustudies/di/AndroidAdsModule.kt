@@ -1,7 +1,9 @@
 package com.studies.rrbmustudies.di
 
 import com.studies.rrbmustudies.ads.AndroidAdManager
+import com.studies.rrbmustudies.ads.AndroidNavAdGateway
 import com.studies.rrbmustudies.ads.AndroidPaperAdGateway
+import com.studies.rrbmustudies.ads.NavAdGateway
 import com.studies.rrbmustudies.ads.PaperAdGateway
 import com.studies.rrbmustudies.platform.currentActivity
 import org.koin.android.ext.koin.androidContext
@@ -15,6 +17,13 @@ val androidAdsModule = module {
         AndroidPaperAdGateway(
             settingsRepository = get(),
             adManager = get(),
+            activityProvider = { currentActivity() },
+        )
+    }
+    single<NavAdGateway> {
+        AndroidNavAdGateway(
+            adManager = get(),
+            settingsRepository = get(),
             activityProvider = { currentActivity() },
         )
     }

@@ -10,6 +10,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Person
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -62,13 +65,19 @@ fun TeamMemberCard(
                 modifier = Modifier
                     .size(80.dp)
                     .clip(CircleShape)
-                    .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)),
+                    .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.1f))
+                    .border(
+                        width = 3.dp,
+                        color = MaterialTheme.colorScheme.primary.copy(alpha = 0.15f),
+                        shape = CircleShape,
+                    ),
                 contentAlignment = Alignment.Center,
             ) {
-                Text(
-                    text = name.firstOrNull()?.uppercase() ?: "?",
-                    style = MaterialTheme.typography.headlineMedium,
-                    color = MaterialTheme.colorScheme.primary,
+                Icon(
+                    imageVector = Icons.Default.Person,
+                    contentDescription = name,
+                    tint = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier.size(44.dp),
                 )
             }
         }

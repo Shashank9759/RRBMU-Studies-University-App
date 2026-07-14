@@ -18,3 +18,20 @@ object NoOpPaperAdGateway : PaperAdGateway {
     override suspend fun requestBeforeOpenPaper(isAdmin: Boolean, onProceed: () -> Unit) = onProceed()
     override suspend fun requestBeforeOfflineDownload(isAdmin: Boolean, onProceed: () -> Unit) = onProceed()
 }
+
+/**
+ * Interstitial policy for bottom-tab switches:
+ * show only after 4–8 switches AND ≥60–120s since the last full-screen ad,
+ * and only once the new screen has settled — never on every switch.
+ */
+interface NavAdGateway {
+    fun onTabSwitched(isAdmin: Boolean)
+}
+
+object NoOpNavAdGateway : NavAdGateway {
+    override fun onTabSwitched(isAdmin: Boolean) = Unit
+}
+
+/** Native ad styled as an in-list card. Renders nothing until an ad is loaded. */
+@Composable
+expect fun NativeAdCard(modifier: Modifier = Modifier)

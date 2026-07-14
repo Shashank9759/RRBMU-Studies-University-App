@@ -27,6 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.studies.rrbmustudies.ui.theme.FrauncesFamily
 
 @Composable
 fun RrbmuTopBar(
@@ -87,8 +88,10 @@ fun RrbmuTopBar(
 
                 Text(
                     text = title,
-                    style = MaterialTheme.typography.titleLarge,
-                    fontWeight = FontWeight.ExtraBold,
+                    style = MaterialTheme.typography.titleLarge.copy(
+                        fontFamily = FrauncesFamily(),
+                    ),
+                    fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.primary,
                     modifier = Modifier.weight(1f),
                 )
@@ -118,7 +121,7 @@ fun RrbmuTopBar(
                                     .padding(top = 10.dp, end = 10.dp)
                                     .size(8.dp)
                                     .clip(CircleShape)
-                                    .background(MaterialTheme.colorScheme.secondaryContainer),
+                                    .background(com.studies.rrbmustudies.ui.theme.Saffron),
                             )
                         }
                     }

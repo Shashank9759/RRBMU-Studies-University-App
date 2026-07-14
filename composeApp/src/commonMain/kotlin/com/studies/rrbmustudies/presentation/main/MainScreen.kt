@@ -39,6 +39,10 @@ fun MainScreen(
     initialTab: BottomTab = BottomTab.Home,
 ) {
     var selectedTab by rememberSaveable { mutableStateOf(initialTab) }
+    var homeSearchBarVisible by androidx.compose.runtime.remember {
+        mutableStateOf(true)
+    }
+    val navAdGateway = org.koin.compose.koinInject<com.studies.rrbmustudies.ads.NavAdGateway>()
     val notificationsViewModel: NotificationsViewModel = koinViewModel()
     val hasUnread by notificationsViewModel.hasUnread.collectAsStateWithLifecycle()
 
@@ -47,7 +51,11 @@ fun MainScreen(
             RrbmuTopBar(
                 showLogo = selectedTab == BottomTab.Home,
                 onMenuClick = null,
-                onSearchClick = null,
+                onSearchClick = if (selectedTab == BottomTab.Home && !homeSearchBarVisible) {
+                    onSearchClick
+                } else {
+                    null
+                },
                 onNotificationsClick = { selectedTab = BottomTab.Notifications },
                 showNotificationDot = hasUnread,
             )
@@ -55,7 +63,12 @@ fun MainScreen(
         bottomBar = {
             RrbmuBottomBar(
                 selectedTab = selectedTab,
-                onTabSelected = { selectedTab = it },
+                onTabSelected = { tab ->
+                    if (tab != selectedTab) {
+                        selectedTab = tab
+                        navAdGateway.onTabSwitched(isAdmin)
+                    }
+                },
             )
         },
     ) { padding ->
@@ -67,6 +80,7 @@ fun MainScreen(
                     onSearchClick = onSearchClick,
                     onAdClick = onAdClick,
                     onSeeAllCourses = { selectedTab = BottomTab.Courses },
+                    onSearchBarVisibilityChanged = { homeSearchBarVisible = it },
                 )
                 BottomTab.Courses -> CoursesScreen(onCourseClick = onCourseClick)
                 BottomTab.Notifications -> NotificationsScreen(

@@ -10,6 +10,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import com.studies.rrbmustudies.BuildConfig
 import com.studies.rrbmustudies.di.initKoin
 import com.studies.rrbmustudies.di.presentationModule
 import com.studies.rrbmustudies.navigation.IncomingDeepLink
@@ -28,17 +29,20 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Block screenshots / screen recording for the entire app (QA H3).
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_SECURE,
-            WindowManager.LayoutParams.FLAG_SECURE,
-        )
+        // Kept in release builds; relaxed in debug so QA/design can capture screens.
+        if (!BuildConfig.DEBUG) {
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_SECURE,
+                WindowManager.LayoutParams.FLAG_SECURE,
+            )
+        }
         bindAndroidContext(this)
         bindActivity(this)
         initializeFirebase(applicationContext)
         applyDeepLink(intent)
         initKoin(extraModules = listOf(presentationModule, androidAdsModule)) {
             androidLogger()
-            androidContext(this@MainActivity)
+            androidContext(applicationContext)
         }
         enableEdgeToEdge()
         setContent {

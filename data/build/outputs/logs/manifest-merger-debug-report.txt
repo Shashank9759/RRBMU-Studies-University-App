@@ -1,16 +1,16 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7237103655567334089.xml:2:13-83
-INJECTED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7237103655567334089.xml:2:13-83
+ADDED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9763864809254036915.xml:2:13-83
+INJECTED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9763864809254036915.xml:2:13-83
 	package
-		INJECTED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7237103655567334089.xml
+		INJECTED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9763864809254036915.xml
 	xmlns:android
-		ADDED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7237103655567334089.xml:2:23-81
+		ADDED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9763864809254036915.xml:2:23-81
 uses-sdk
-INJECTED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7237103655567334089.xml reason: use-sdk injection requested
-INJECTED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7237103655567334089.xml
-INJECTED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7237103655567334089.xml
+INJECTED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9763864809254036915.xml reason: use-sdk injection requested
+INJECTED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9763864809254036915.xml
+INJECTED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9763864809254036915.xml
 	android:targetSdkVersion
-		INJECTED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7237103655567334089.xml
+		INJECTED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9763864809254036915.xml
 	android:minSdkVersion
-		INJECTED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest7237103655567334089.xml
+		INJECTED from /Users/shashankranjan/StudioProjects/RRBMU-Studies-University-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9763864809254036915.xml

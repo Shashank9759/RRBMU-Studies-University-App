@@ -14,9 +14,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.studies.rrbmustudies.resources.Res
+import com.studies.rrbmustudies.resources.univ_logo
 import org.jetbrains.compose.resources.painterResource
-import rrbmustudies.composeapp.generated.resources.Res
-import rrbmustudies.composeapp.generated.resources.univ_logo
+
+
 
 @Composable
 fun BrandLogo(

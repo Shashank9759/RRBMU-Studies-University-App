@@ -1,10 +1,11 @@
 package com.studies.rrbmustudies.ui.components
 
+import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBarsPadding
@@ -21,49 +22,43 @@ import androidx.compose.material.icons.outlined.MoreHoriz
 import androidx.compose.material.icons.outlined.Notifications
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.studies.rrbmustudies.navigation.BottomTab
+import com.studies.rrbmustudies.ui.theme.SaffronBrush
 
 @Composable
 fun RrbmuBottomBar(
     selectedTab: BottomTab,
     onTabSelected: (BottomTab) -> Unit,
 ) {
-    Surface(
+    val dark = isSystemInDarkTheme()
+    Row(
         modifier = Modifier
             .fillMaxWidth()
-            .navigationBarsPadding(),
-        color = MaterialTheme.colorScheme.surface,
-        shadowElevation = 8.dp,
+            .navigationBarsPadding()
+            .padding(horizontal = 20.dp, vertical = 12.dp)
+            .shadow(20.dp, RoundedCornerShape(999.dp), spotColor = Color(0xFF0A1046))
+            .clip(RoundedCornerShape(999.dp))
+            .background(if (dark) Color(0xFF171A2B) else Color.White)
+            .padding(horizontal = 8.dp, vertical = 8.dp),
+        horizontalArrangement = Arrangement.spacedBy(4.dp, Alignment.CenterHorizontally),
+        verticalAlignment = Alignment.CenterVertically,
     ) {
-        Column {
-            androidx.compose.material3.HorizontalDivider(
-                color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.35f),
-                thickness = 1.dp,
+        BottomTab.entries.forEach { tab ->
+            BottomBarItem(
+                tab = tab,
+                selected = tab == selectedTab,
+                onClick = { onTabSelected(tab) },
+                modifier = Modifier.weight(1f),
             )
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 8.dp, vertical = 8.dp),
-                horizontalArrangement = Arrangement.SpaceAround,
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                BottomTab.entries.forEach { tab ->
-                    BottomBarItem(
-                        tab = tab,
-                        selected = tab == selectedTab,
-                        onClick = { onTabSelected(tab) },
-                    )
-                }
-            }
         }
     }
 }
@@ -73,6 +68,7 @@ private fun BottomBarItem(
     tab: BottomTab,
     selected: Boolean,
     onClick: () -> Unit,
+    modifier: Modifier = Modifier,
 ) {
     val label = when (tab) {
         BottomTab.Home -> "Home"
@@ -87,33 +83,29 @@ private fun BottomBarItem(
         BottomTab.More -> if (selected) Icons.Filled.MoreHoriz else Icons.Outlined.MoreHoriz
     }
 
-    Column(
-        modifier = Modifier
-            .clip(RoundedCornerShape(12.dp))
-            .background(
-                if (selected) MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.2f)
-                else MaterialTheme.colorScheme.surface,
-            )
+    val contentColor by animateColorAsState(
+        if (selected) Color.White
+        else MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.75f),
+        label = "navColor",
+    )
+
+    Row(
+        modifier = modifier
+            .clip(RoundedCornerShape(999.dp))
+            .then(if (selected) Modifier.background(SaffronBrush) else Modifier)
             .clickable(
                 interactionSource = remember { MutableInteractionSource() },
                 indication = null,
                 onClick = onClick,
             )
-            .padding(horizontal = 12.dp, vertical = 6.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
+            .padding(vertical = 12.dp),
+        horizontalArrangement = Arrangement.Center,
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         Icon(
             imageVector = icon,
             contentDescription = label,
-            tint = if (selected) MaterialTheme.colorScheme.primary
-            else MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
-        )
-        Text(
-            text = label,
-            style = MaterialTheme.typography.labelMedium,
-            fontWeight = if (selected) FontWeight.SemiBold else FontWeight.Normal,
-            color = if (selected) MaterialTheme.colorScheme.primary
-            else MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
+            tint = contentColor,
         )
     }
 }

@@ -26,8 +26,6 @@ import androidx.compose.material.icons.filled.OfflinePin
 import androidx.compose.material.icons.filled.PictureAsPdf
 import androidx.compose.material.icons.filled.School
 import androidx.compose.material.icons.filled.Share
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -44,8 +42,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -54,11 +53,15 @@ import com.studies.rrbmustudies.domain.model.Paper
 import com.studies.rrbmustudies.navigation.AppDeepLinks
 import com.studies.rrbmustudies.platform.shareText
 import com.studies.rrbmustudies.ui.components.AdBannerSlot
+import com.studies.rrbmustudies.ui.components.CrestWatermark
 import com.studies.rrbmustudies.ui.components.ErrorState
 import com.studies.rrbmustudies.ui.components.LoadingShimmer
 import com.studies.rrbmustudies.ui.components.RrbmuTopBar
+import com.studies.rrbmustudies.ui.components.SaffronButton
 import com.studies.rrbmustudies.ui.state.UiState
 import com.studies.rrbmustudies.ui.theme.RrbmuDimens
+import com.studies.rrbmustudies.ui.theme.courseHeroBrush
+import com.studies.rrbmustudies.ui.theme.courseJewel
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
@@ -98,7 +101,7 @@ fun PaperDetailScreen(
                         .padding(padding)
                         .verticalScroll(rememberScrollState()),
                 ) {
-                    PaperHeroBanner(title = detail.paper.title)
+                    PaperHeroBanner(paper = detail.paper)
                     Column(
                         modifier = Modifier
                             .padding(horizontal = RrbmuDimens.screenHorizontal)
@@ -142,39 +145,45 @@ fun PaperDetailScreen(
 }
 
 @Composable
-private fun PaperHeroBanner(title: String) {
+private fun PaperHeroBanner(paper: Paper) {
+    val jewel = courseJewel(paper.courseId)
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .height(200.dp)
-            .background(
-                Brush.linearGradient(
-                    colors = listOf(
-                        Color(0xFF1A237E),
-                        Color(0xFF006064),
-                    ),
-                ),
-            )
+            .height(210.dp)
+            .background(courseHeroBrush(jewel))
             .padding(20.dp),
         contentAlignment = Alignment.BottomStart,
     ) {
+        CrestWatermark(
+            modifier = Modifier
+                .align(Alignment.TopEnd)
+                .padding(top = 12.dp)
+                .size(150.dp)
+                .graphicsLayer { alpha = 0.10f },
+        )
         Column {
             Text(
                 text = "PREVIOUS YEAR PAPER",
-                style = MaterialTheme.typography.labelMedium,
-                fontWeight = FontWeight.SemiBold,
+                style = MaterialTheme.typography.labelSmall,
                 color = Color.White,
                 modifier = Modifier
-                    .clip(RoundedCornerShape(8.dp))
+                    .clip(RoundedCornerShape(999.dp))
                     .background(Color.White.copy(alpha = 0.2f))
-                    .padding(horizontal = 8.dp, vertical = 4.dp),
+                    .padding(horizontal = 12.dp, vertical = 5.dp),
             )
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(10.dp))
             Text(
-                text = title,
-                style = MaterialTheme.typography.headlineLarge,
-                fontWeight = FontWeight.Bold,
+                text = paper.title,
+                style = MaterialTheme.typography.headlineMedium,
+                fontWeight = FontWeight.ExtraBold,
                 color = Color.White,
+            )
+            Spacer(modifier = Modifier.height(6.dp))
+            Text(
+                text = "${paper.subject}  •  ${paper.year}",
+                style = MaterialTheme.typography.bodyMedium,
+                color = Color.White.copy(alpha = 0.85f),
             )
         }
     }
@@ -196,9 +205,9 @@ private fun DetailCard(
     Column(
         modifier = Modifier
             .fillMaxWidth()
+            .shadow(12.dp, RoundedCornerShape(RrbmuDimens.cardRadius), spotColor = Color(0xFF0A1046))
             .clip(RoundedCornerShape(RrbmuDimens.cardRadius))
             .background(MaterialTheme.colorScheme.surfaceContainerLowest)
-            .border(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.3f), RoundedCornerShape(RrbmuDimens.cardRadius))
             .padding(RrbmuDimens.spacingLg),
         verticalArrangement = Arrangement.spacedBy(RrbmuDimens.spacingMd),
     ) {
@@ -250,18 +259,17 @@ private fun DetailCard(
             }
         }
 
-        Button(
+        SaffronButton(
+            text = "View Paper",
             onClick = onViewPdf,
             enabled = !isDownloading,
             modifier = Modifier
                 .fillMaxWidth()
                 .height(56.dp),
-            shape = RoundedCornerShape(RrbmuDimens.buttonRadius),
-            colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
-        ) {
-            Icon(Icons.Default.PictureAsPdf, contentDescription = null)
-            Text("  View Paper", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
-        }
+            leading = {
+                Icon(Icons.Default.PictureAsPdf, contentDescription = null, tint = Color.White)
+            },
+        )
 
         OutlinedButton(
             onClick = onDownloadOffline,

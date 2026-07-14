@@ -19,7 +19,6 @@ import androidx.compose.material.icons.filled.Description
 import androidx.compose.material.icons.filled.Image
 import androidx.compose.material.icons.filled.PictureAsPdf
 import androidx.compose.material.icons.filled.Share
-import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
@@ -41,6 +40,7 @@ import com.studies.rrbmustudies.platform.shareText
 import com.studies.rrbmustudies.ui.components.AdBannerSlot
 import com.studies.rrbmustudies.ui.components.NotificationTypeBadge
 import com.studies.rrbmustudies.ui.components.RrbmuTopBar
+import com.studies.rrbmustudies.ui.components.SaffronButton
 import com.studies.rrbmustudies.ui.theme.RrbmuDimens
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.parameter.parametersOf
@@ -146,26 +146,24 @@ fun NotificationDetailScreen(
                 )
             }
 
-            Button(
+            SaffronButton(
+                text = when {
+                    !hasAttachment -> "See file (none attached)"
+                    isImage -> "See image"
+                    isPdf -> "See PDF"
+                    else -> "See file / PDF"
+                },
                 onClick = { openAttachmentFile() },
                 enabled = hasAttachment,
                 modifier = Modifier.fillMaxWidth(),
-                shape = RoundedCornerShape(50),
-            ) {
-                Icon(
-                    if (isImage) Icons.Default.Image else Icons.Default.PictureAsPdf,
-                    contentDescription = null,
-                )
-                Spacer(modifier = Modifier.size(8.dp))
-                Text(
-                    when {
-                        !hasAttachment -> "See file (none attached)"
-                        isImage -> "See image"
-                        isPdf -> "See PDF"
-                        else -> "See file / PDF"
-                    },
-                )
-            }
+                leading = {
+                    Icon(
+                        if (isImage) Icons.Default.Image else Icons.Default.PictureAsPdf,
+                        contentDescription = null,
+                        tint = androidx.compose.ui.graphics.Color.White,
+                    )
+                },
+            )
 
             if (!hasAttachment) {
                 Text(
@@ -194,7 +192,7 @@ fun NotificationDetailScreen(
                 Text("Share")
             }
 
-            Button(
+            OutlinedButton(
                 onClick = onViewPaperList,
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(50),

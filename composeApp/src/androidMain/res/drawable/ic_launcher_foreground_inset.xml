@@ -3,7 +3,7 @@
      no longer crops the outer ring / university name. -->
 <inset xmlns:android="http://schemas.android.com/apk/res/android"
     android:drawable="@drawable/ic_launcher_foreground_bitmap"
-    android:insetLeft="17%"
-    android:insetTop="17%"
-    android:insetRight="17%"
-    android:insetBottom="17%" />
+    android:insetLeft="24%"
+    android:insetTop="24%"
+    android:insetRight="24%"
+    android:insetBottom="24%" />

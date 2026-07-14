@@ -84,7 +84,7 @@ fun RrbmuTheme(
 
     MaterialTheme(
         colorScheme = if (darkTheme) DarkColorScheme else LightColorScheme,
-        typography = RrbmuTypography,
+        typography = rrbmuTypography(),
         shapes = RrbmuShapes,
         content = content,
     )
